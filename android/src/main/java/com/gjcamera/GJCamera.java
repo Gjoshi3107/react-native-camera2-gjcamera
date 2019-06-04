@@ -34,7 +34,6 @@ import android.widget.Toast;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.WritableMap;
-import com.gjcamera.R;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -52,7 +51,6 @@ public class GJCamera extends AppCompatActivity {
 
     private ImageButton btnCapture;
     private TextureView textureView;
-    public static String imgName;
     private static Promise promise;
 
     //Check state orientation of output image
@@ -69,13 +67,11 @@ public class GJCamera extends AppCompatActivity {
     private CameraDevice cameraDevice;
     private CameraCaptureSession cameraCaptureSessions;
     private CaptureRequest.Builder captureRequestBuilder;
-    private Size imageDimension;
     private ImageReader imageReader;
 
     //Save to FILE
     private File file;
     private static final int REQUEST_CAMERA_PERMISSION = 200;
-    private boolean mFlashSupported;
     private Handler mBackgroundHandler;
     private HandlerThread mBackgroundThread;
 
@@ -96,16 +92,12 @@ public class GJCamera extends AppCompatActivity {
 
         @Override
         public void onDisconnected(@NonNull CameraDevice camera) {
-//            if (promise!=null) {    promise.reject("Error");}
-//            promise = null;
             cameraDevice = camera;
             returnHome();
         }
 
         @Override
         public void onError(@NonNull CameraDevice camera, int i) {
-//            if (promise!=null) {    promise.reject("Error");}
-//            promise = null;
             cameraDevice = camera;
             returnHome();
         }
@@ -246,9 +238,6 @@ public class GJCamera extends AppCompatActivity {
 
     private void returnHome() {
         texture.release();
-//        if(imageReader != null) {
-//            imageReader.close();
-//            imageReader = null;
 //        }
         if (cameraDevice != null) {
             cameraDevice.close();
@@ -265,15 +254,6 @@ public class GJCamera extends AppCompatActivity {
         }
 
     }
-
-//    @Override
-//    public void onDismiss() {
-//        if (!successful && promise != null) {
-//            promise.reject(errorCode, errorDescription);
-//            promise = null;
-//        }
-//        super.onDismiss(dialog);
-//    }
 
     private void setPreview() {
         try {
@@ -321,7 +301,6 @@ public class GJCamera extends AppCompatActivity {
             CameraCharacteristics characteristics = manager.getCameraCharacteristics(cameraId);
             StreamConfigurationMap map = characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
             assert map != null;
-            imageDimension = map.getOutputSizes(SurfaceTexture.class)[0];
             //Check realtime permission if run higher API 23
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(this, new String[]{
