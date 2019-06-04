@@ -59,12 +59,12 @@ in Native:-
 ```
 2) settings.gradle:-
 ```
-include ':rnGJcamera'
-project(':rnGJcamera').projectDir = new File(rootProject.projectDir, '../node_modules/rnGJcamera/android')
+include ':react-native-camera2-gjcamera'
+project(':react-native-camera2-gjcamera').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-camera2-gjcamera/android')
 ```
 3) build.gradle(Module: app):-
 ```
-implementation project(':rnGJcamera')
+implementation project(':react-native-camera2-gjcamera')
 ```
 
 4) MainApplication.java:-
