@@ -13,6 +13,8 @@ In order to take multiple pictures put the condition in the returnHome function 
 npm install --save react-native-camera2-gjcamera
 ```
 
+1.<img width=250px height=400px src ="https://github.com/Gjoshi3107/react-native-camera2-gjcamera/blob/master/img/Before%20Click.png"/>   2.<img width=250px height=400px src ="https://github.com/Gjoshi3107/react-native-camera2-gjcamera/blob/master/img/IMG_20190604_152120.png"/>   3.<img width=250px height=400px src ="https://github.com/Gjoshi3107/react-native-camera2-gjcamera/blob/master/img/after%20click.png"/>
+<pre>1.Before Click</pre><pre>2.Image Clicked </pre><pre>3.After Clicked</pre>
 
 ## Usage
 
