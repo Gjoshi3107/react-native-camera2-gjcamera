@@ -1,4 +1,4 @@
-react-native-camera2-gjcamera
+## react-native-camera2-gjcamera
 
 This project is Created in order to understand the working of android.hardware.camera2 package.
 It is in react-native language.
@@ -45,7 +45,7 @@ import GJ from 'react-native-camera2-gjcamera'
 ```
 in Native:-
 
-AndroidMainfest.xml
+1) AndroidMainfest.xml
 ```
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.hardware.camera2.full" />
@@ -55,17 +55,17 @@ AndroidMainfest.xml
     <activity android:name="com.gjcamera.GJCamera"/>
 />
 ```
-settings.gradle:-
+2) settings.gradle:-
 ```
 include ':rnGJcamera'
 project(':rnGJcamera').projectDir = new File(rootProject.projectDir, '../node_modules/rnGJcamera/android')
 ```
-build.gradle(Module: app):-
+3) build.gradle(Module: app):-
 ```
 implementation project(':rnGJcamera')
 ```
 
-MainApplication.java:-
+4) MainApplication.java:-
 
 ```
 import com.gjcamera.GJCameraPackage;
