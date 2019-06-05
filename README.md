@@ -13,7 +13,8 @@ In order to take multiple pictures put the condition in the returnHome function 
 npm install --save react-native-camera2-gjcamera
 ```
 
-1.<img width=250px height=400px src ="https://github.com/Gjoshi3107/react-native-camera2-gjcamera/blob/master/img/Before%20Click.png"/>   2.<img width=250px height=400px src ="https://github.com/Gjoshi3107/react-native-camera2-gjcamera/blob/master/img/IMG_20190604_152120.png"/>   3.<img width=250px height=400px src ="https://github.com/Gjoshi3107/react-native-camera2-gjcamera/blob/master/img/after%20click.png"/>
+1. <img width=250px height=400px src ="https://user-images.githubusercontent.com/49477268/58932868-03755f00-8783-11e9-9247-e0b1ef8add82.png"/>   2. <img width=250px height=400px src ="https://user-images.githubusercontent.com/49477268/58932871-083a1300-8783-11e9-8682-b917666eb4a9.png"/>   3. <img width=250px height=400px src ="https://user-images.githubusercontent.com/49477268/58932875-0c663080-8783-11e9-87f3-e854d46d220b.png"/>
+
 <pre>1.Before Click</pre><pre>2.Image Clicked </pre><pre>3.After Clicked</pre>
 
 ## Usage
@@ -24,26 +25,26 @@ import GJ from 'react-native-camera2-gjcamera'
 
 ...
 
-    this.state = {
-        ...
-        imgPATH: "LOL"
-    };
-    ...
-    OpenMyCamer = async () => {
-        const result = await GJ.OpenMyCamera();
-        this.setState({ imgPATH: result.imgPath });
-    }
-    ...
-    render(){
-        return(
-            ...
-            <TouchableOpacity onPress={() => this.OpenMyCamer()}>
-                <Text>Open Camera</Text>
-            </TouchableOpacity>
-            <Text style={styles.signInText}>{this.state.imgPATH}</Text>
-            ...
-        );
-    }
+this.state = {
+...
+imgPATH: "LOL"
+};
+...
+OpenMyCamer = async () => {
+const result = await GJ.OpenMyCamera();
+this.setState({ imgPATH: result.imgPath });
+}
+...
+render(){
+return(
+...
+<TouchableOpacity onPress={() => this.OpenMyCamer()}>
+<Text>Open Camera</Text>
+</TouchableOpacity>
+<Text style={styles.signInText}>{this.state.imgPATH}</Text>
+...
+);
+}
 ```
 in Native:-
 
@@ -53,8 +54,8 @@ in Native:-
 <uses-permission android:name="android.hardware.camera2.full" />
 ...
 <application
-    ...
-    <activity android:name="com.gjcamera.GJCamera"/>
+...
+<activity android:name="com.gjcamera.GJCamera"/>
 />
 ```
 2) settings.gradle:-
@@ -72,10 +73,10 @@ implementation project(':react-native-camera2-gjcamera')
 ```
 import com.gjcamera.GJCameraPackage;
 ...
-    return Arrays.asList(
-        ...
-        new GJCameraPackage()
-    );
+return Arrays.asList(
+...
+new GJCameraPackage()
+);
 ```
 
 Hope you will like it.
