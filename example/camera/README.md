@@ -7,7 +7,7 @@ It is supposed to take a picture and show it's storage path to the user.
 
 In order to take multiple pictures put the condition in the returnHome function as per your need.
 
-## Installation
+## Installation:-
 
 ```sh
 npm install --save react-native-camera2-gjcamera
