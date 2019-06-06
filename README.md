@@ -13,6 +13,39 @@ In order to take multiple pictures put the condition in the returnHome function 
 npm install --save react-native-camera2-gjcamera
 ```
 
+in Native:-
+
+1) AndroidMainfest.xml
+```
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.hardware.camera2.full" />
+...
+<application
+...
+<activity android:name="com.gjcamera.GJCamera"/>
+/>
+```
+2) settings.gradle:-
+```
+include ':react-native-camera2-gjcamera'
+project(':react-native-camera2-gjcamera').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-camera2-gjcamera/android')
+```
+3) build.gradle(Module: app):-
+```
+implementation project(':react-native-camera2-gjcamera')
+```
+
+4) MainApplication.java:-
+
+```
+import com.gjcamera.GJCameraPackage;
+...
+return Arrays.asList(
+...
+new GJCameraPackage()
+);
+```
+## Images
 1. <img width=250px height=400px src ="https://user-images.githubusercontent.com/49477268/58932868-03755f00-8783-11e9-9247-e0b1ef8add82.png"/>   2. <img width=250px height=400px src ="https://user-images.githubusercontent.com/49477268/58932871-083a1300-8783-11e9-8682-b917666eb4a9.png"/>   3. <img width=250px height=400px src ="https://user-images.githubusercontent.com/49477268/58932875-0c663080-8783-11e9-87f3-e854d46d220b.png"/>
 
 <pre>1.Before Click</pre><pre>2.Image Clicked </pre><pre>3.After Clicked</pre>
@@ -45,38 +78,6 @@ return(
 ...
 );
 }
-```
-in Native:-
-
-1) AndroidMainfest.xml
-```
-<uses-permission android:name="android.permission.CAMERA" />
-<uses-permission android:name="android.hardware.camera2.full" />
-...
-<application
-...
-<activity android:name="com.gjcamera.GJCamera"/>
-/>
-```
-2) settings.gradle:-
-```
-include ':react-native-camera2-gjcamera'
-project(':react-native-camera2-gjcamera').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-camera2-gjcamera/android')
-```
-3) build.gradle(Module: app):-
-```
-implementation project(':react-native-camera2-gjcamera')
-```
-
-4) MainApplication.java:-
-
-```
-import com.gjcamera.GJCameraPackage;
-...
-return Arrays.asList(
-...
-new GJCameraPackage()
-);
 ```
 
 Hope you will like it.
